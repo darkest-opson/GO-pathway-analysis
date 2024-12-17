@@ -6,6 +6,7 @@ import os
 import main
 # Title and Description
 st.title("Gene Enrichment Analysis App")
+st.subheader("Create by Prabhat Tripathi, Sysbio@IIITA")
 st.write("Enter a list of genes to perform GO and pathway enrichment analysis using GSEAPy.")
 
 # Input Section
@@ -15,7 +16,7 @@ try:
     if st.button("Submit"):
         gene_list = [gene.strip() for gene in genes_input.split("\n") if gene.strip()]
 except:
-    st.write(" ")
+    st.write("Click submit to start.")
 
 Result = main.GO_path(gene_list)
 gene_sets = ['KEGG_2021_Human', 'KEGG_2019_Human', 'Reactome_Pathways_2024', 
